@@ -8,7 +8,7 @@ describe("Front-end Automation Challenge Test Suite", () => {
   it("Preencher o Formulário e Assegurar que o mesmo completou", () => {
     const firstName = faker.person.firstName();
     const lastName = faker.person.lastName();
-    const email = `${firstName}@sharklasers.com`;
+    const email = `${firstName}@accenture.com`;
     const address = faker.location.streetAddress();
 
     cy.clickForms();
