@@ -3,7 +3,7 @@ describe("API Challenge - Test Suite", () => {
 
   before(() => {
     const unixTimeStamp = Date.now();
-    userName = "tiago_" + unixTimeStamp;
+    userName = `tiago_${unixTimeStamp}`;
 
     cy.log("#1 - Criar um usuário");
     cy.createNewUser(userName, "Qwer1234*");
