@@ -57,3 +57,27 @@ Cypress.Commands.add("apiToken", (userName, password) => {
     .its("status")
     .should("eq", 200);
 });
+
+Cypress.Commands.add("clickElementBySelector", (selector) => {
+  cy.get(selector).click();
+});
+
+Cypress.Commands.add("clickElementByContains", (selector, string) => {
+  cy.get(selector).contains(string).click();
+});
+
+Cypress.Commands.add("fillElementBySelector", (selector, string) => {
+  cy.get(selector).type(string);
+});
+
+Cypress.Commands.add("checkElementBySelector", (selector) => {
+  cy.get(selector).check({ force: true });
+});
+
+Cypress.Commands.add("uploadFileBySelector", (selector, path) => {
+  cy.get(selector).selectFile(path);
+});
+
+Cypress.Commands.add("assertStringBySelector", (selector, string) => {
+  cy.get(selector).should("have.text", string);
+});
