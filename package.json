@@ -1,4 +1,9 @@
 {
+  "name": "api_and_front_challenge",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npx cypress run"
+  },
   "dependencies": {
     "cypress": "^13.8.1"
   },
