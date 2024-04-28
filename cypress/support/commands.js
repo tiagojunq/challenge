@@ -59,11 +59,11 @@ Cypress.Commands.add("apiToken", (userName, password) => {
 });
 
 Cypress.Commands.add("clickElementBySelector", (selector) => {
-  cy.get(selector).click();
+  cy.get(selector).click({ force: true });
 });
 
 Cypress.Commands.add("clickElementByContains", (selector, string) => {
-  cy.get(selector).contains(string).click();
+  cy.get(selector).contains(string).click({ force: true });
 });
 
 Cypress.Commands.add("fillElementBySelector", (selector, string) => {
