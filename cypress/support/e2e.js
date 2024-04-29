@@ -19,7 +19,6 @@ import "./Homepage/homepage";
 import "./Forms/formspage";
 import "./Forms/practiceformpage";
 import "./Alerts_Frame_Windows/alertswindowspage";
-import "./Alerts_Frame_Windows/samplepage";
 import "./Elements/elementspage";
 import "./Elements/webtablespage";
 import "./Elements/registrationformpage";

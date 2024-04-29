@@ -15,4 +15,11 @@ declare namespace Cypress {
      */
     clickAlertsWindows(): Chainable<any>;
   }
+
+  interface Chainable<Subject> {
+    /**
+     * Custom Cypress command to click on the "Elements" link.
+     */
+    clickElements(): Chainable<any>;
+  }
 }

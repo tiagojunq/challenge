@@ -7,12 +7,12 @@ describe("API Challenge - Test Suite", () => {
     const unixTimeStamp = Date.now();
     userName = `tiago_${unixTimeStamp}`;
 
-    cy.log("Criar um usuário");
+    cy.log("Create a user");
     cy.createNewUser(userName, "Qwer1234*");
   });
 
   beforeEach(() => {
-    cy.log("Gerar um Token de acesso e confirmar Status 200 [Success]");
+    cy.log("Generate an Access Token and confirm Status 200 [Success]");
     cy.apiToken(userName, "Qwer1234*");
   });
 
@@ -34,8 +34,7 @@ describe("API Challenge - Test Suite", () => {
     });
   });
 
-  it("#1 - Confirmar se o usuário criado está autorizado", () => {
-    cy.log("#3 - Confirmar se o usuário criado está autorizado");
+  it("#1 - Confirm if the created user is authorized", () => {
     cy.request({
       method: "POST",
       url: "/Account/v1/Authorized",
@@ -49,7 +48,7 @@ describe("API Challenge - Test Suite", () => {
     });
   });
 
-  it("#2 - Listar os livros disponíveis", () => {
+  it("#2 - List the available books", () => {
     cy.request({
       method: "GET",
       url: "/BookStore/v1/Books",
@@ -63,7 +62,7 @@ describe("API Challenge - Test Suite", () => {
       .should("eq", 200);
   });
 
-  it("#3 - Alugar dois livros de livre escolha", () => {
+  it("#3 - Rent 2 free books", () => {
     const token = Cypress.env("token");
     const authorization = `Bearer ${token}`;
 
@@ -108,7 +107,7 @@ describe("API Challenge - Test Suite", () => {
       .should("eq", 201);
   });
 
-  it("#4 - Listar os detalhes do usuário com os livros escolhidos", () => {
+  it("#4 - List the details of the user with the chosen books", () => {
     const token = Cypress.env("token");
     const authorization = `Bearer ${token}`;
 
