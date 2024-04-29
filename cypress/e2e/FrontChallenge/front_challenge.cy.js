@@ -34,7 +34,7 @@ describe("Front-end Automation Challenge Test Suite", () => {
     cy.closeModal();
   });
 
-  it.only("#2 - [Ppt_Pag05 / Alerts, Frame & Window] Checking the opening of a new window", () => {
+  it("#2 - [Ppt_Pag05 / Alerts, Frame & Window] Checking the opening of a new window", () => {
     cy.clickAlertsWindows();
     cy.clickBrowserWindows();
     cy.enterWindow("#windowButton");
