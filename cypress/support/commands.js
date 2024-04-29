@@ -81,3 +81,15 @@ Cypress.Commands.add("uploadFileBySelector", (selector, path) => {
 Cypress.Commands.add("assertStringBySelector", (selector, string) => {
   cy.get(selector).should("have.text", string);
 });
+
+Cypress.Commands.add("enterWindow", (selector) => {
+  cy.window().then((win) => {
+    cy.stub(win, "open")
+      .callsFake((url) => {
+        win.location.href = url;
+      })
+      .as("openWindow");
+  });
+  cy.clickElementBySelector(selector);
+  cy.get("@openWindow").should("be.called");
+});
