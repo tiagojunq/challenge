@@ -12,7 +12,7 @@ describe("API Challenge - Test Suite", () => {
   });
 
   beforeEach(() => {
-    cy.log("Generat an Access Token and confirm Status 200 [Success]");
+    cy.log("Generate an Access Token and confirm Status 200 [Success]");
     cy.apiToken(userName, "Qwer1234*");
   });
 
