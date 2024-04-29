@@ -15,9 +15,15 @@
 
 // Import commands.js using ES2015 syntax:
 import "./commands";
-import "./homepage";
-import "./formspage";
-import "./practiceformpage";
+import "./Homepage/homepage";
+import "./Forms/formspage";
+import "./Forms/practiceformpage";
+import "./Alerts_Frame_Windows/alertswindowspage";
+import "./Alerts_Frame_Windows/samplepage";
+import "./Elements/elementspage";
+import "./Elements/webtablespage";
+import "./Elements/registrationformpage";
+import "@shelex/cypress-allure-plugin";
 
 Cypress.on("uncaught:exception", (err, runnable) => {
   // returning false here prevents Cypress from

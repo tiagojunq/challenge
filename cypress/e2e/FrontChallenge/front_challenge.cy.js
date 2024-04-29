@@ -5,7 +5,7 @@ describe("Front-end Automation Challenge Test Suite", () => {
     cy.visitQADemo();
   });
 
-  it("Preencher o Formulário e Assegurar que o mesmo completou", () => {
+  it("#1 - [Ppt_Pag04 / Forms] Fill the form and ensure that it has been completed", () => {
     const firstName = faker.person.firstName();
     const lastName = faker.person.lastName();
     const email = `${firstName}@accenture.com`;
@@ -32,5 +32,38 @@ describe("Front-end Automation Challenge Test Suite", () => {
     );
 
     cy.closeModal();
+  });
+
+  it("#2 - [Ppt_Pag05 / Alerts, Frame & Window] Checking the opening of a new window", () => {
+    cy.clickAlertsWindows();
+    cy.clickBrowserWindows();
+    cy.enterWindow("#windowButton");
+    cy.assertStringBySelector("#sampleHeading", "This is a sample page");
+    cy.go("back");
+    cy.assertStringBySelector(".text-center", "Browser Windows");
+  });
+
+  it("#3 - [Ppt_Pag06 / Elements] CRUD Elements in the web table", () => {
+    const firstName = faker.person.firstName();
+    const lastName = faker.person.lastName();
+    const email = `${firstName}@accenture.com`;
+    const age = faker.finance.accountNumber(2);
+    const salary = 16000;
+    const departmentName = "QA";
+
+    cy.clickElements();
+    cy.clickWebTables();
+    cy.clickaddNewRecordButton();
+
+    cy.fillWebTableFormFirstName(firstName);
+    cy.fillWebTableFormLastName(lastName);
+    cy.fillWebTableFormEmail(email);
+    cy.fillWebTableFormAge(age);
+    cy.fillWebTableFormSalary(salary);
+    cy.fillWebTableFormDepartment(departmentName);
+    cy.clickTableFormSubmit();
+    cy.typeWebTableOnSearch(firstName);
+    cy.deleteWebTableFoundRecord();
+    cy.assertWebTableNoData();
   });
 });

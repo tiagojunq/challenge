@@ -9,5 +9,10 @@ declare namespace Cypress {
      * Custom Cypress command to click on the "Forms" link.
      */
     clickForms(): Chainable<any>;
+
+    /**
+     * Custom Cypress command to click on the "Alerts, Frame & Windows" link.
+     */
+    clickAlertsWindows(): Chainable<any>;
   }
 }
