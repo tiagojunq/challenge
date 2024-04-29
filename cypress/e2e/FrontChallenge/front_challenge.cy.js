@@ -49,7 +49,7 @@ describe("Front-end Automation Challenge Test Suite", () => {
     const email = `${firstName}@accenture.com`;
     const age = faker.finance.accountNumber(2);
     const salary = 16000;
-    const deparmentName = "QA";
+    const departmentName = "QA";
 
     cy.clickElements();
     cy.clickWebTables();
@@ -60,7 +60,7 @@ describe("Front-end Automation Challenge Test Suite", () => {
     cy.fillWebTableFormEmail(email);
     cy.fillWebTableFormAge(age);
     cy.fillWebTableFormSalary(salary);
-    cy.fillWebTableFormDepartment(deparmentName);
+    cy.fillWebTableFormDepartment(departmentName);
     cy.clickTableFormSubmit();
     cy.typeWebTableOnSearch(firstName);
     cy.deleteWebTableFoundRecord();
